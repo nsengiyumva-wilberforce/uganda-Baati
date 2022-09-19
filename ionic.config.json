@@ -1,0 +1,7 @@
+{
+  "name": "uganda_baati",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
