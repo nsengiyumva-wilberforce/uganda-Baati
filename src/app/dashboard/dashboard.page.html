@@ -1,0 +1,73 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item routerLink="/welcome">Outlets</ion-item>
+        <ion-item routerLink="/stock-competition">Stock competition</ion-item>
+        <ion-item routerLink="/route-schedules">Route Schedules</ion-item>
+        <ion-item routerLink="/customer-feedback">Customer Feedback</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <img src="assets/site-logo.png" alt="">
+        <ion-buttons slot="end">
+          <ion-button routerLink="/add-outlet">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+ 
+      <ion-row>
+        <ion-col size="6">
+          <ion-button shape="round" fill="clear">
+            <ion-icon name="map-outline"></ion-icon>
+          </ion-button>
+          <p>Pre Journey Plan</p>
+        </ion-col>
+        <ion-col size="6" routerLink="/welcome">
+          <ion-button shape="round" fill="clear">
+            <ion-icon name="home-outline"></ion-icon>
+          </ion-button>
+          <p>All Outlets</p>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" fill="clear">
+            <ion-icon name="people-circle-outline"></ion-icon>
+          </ion-button>
+          <p>My Team</p>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" fill="clear">
+            <ion-icon name="checkmark-done-outline"></ion-icon>
+          </ion-button>
+          <p>Proposed Outlets</p>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" fill="clear">
+            <ion-icon name="checkmark-done-outline"></ion-icon>
+          </ion-button>
+          <p>Prospective Dealer</p>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" fill="clear">
+            <ion-icon name="locate-outline"></ion-icon>
+          </ion-button>
+          <p>PJP Route</p>
+        </ion-col>
+      </ion-row>
+    </ion-content>
+  </div>
+</ion-app>

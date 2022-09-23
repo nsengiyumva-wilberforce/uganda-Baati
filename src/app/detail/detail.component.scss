@@ -1,0 +1,24 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card_1, .card_2, .card_3{
+    border-radius: 1px solid black;
+    width: 80px;
+    color: white;
+    text-align: center;
+}
+.header_title{
+    font-size: 10px;
+}
+ion-label{
+    font-size: 6px;
+    font-weight: bold;
+}
+ion-segment-button{
+    width: 20px;
+}
+.box1{
+    background-color: rgb(95, 95, 188);
+}

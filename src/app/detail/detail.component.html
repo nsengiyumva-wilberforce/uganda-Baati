@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>{{outlet.outlet_name}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">
+                <ion-icon slot="start" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-text color="primary">
+        <h5>Outlet Details</h5>
+    </ion-text>
+    <p><b>Outlet Name:</b>{{outlet.outlet_name}}<br>
+    <span><b>Distributor name:</b>{{outlet.distributor_name}}</span><br>
+<span><b><ion-icon name="call-outline" color="primary"></ion-icon>Tel: </b>{{outlet.phone_number}}</span><br>
+<span><b>Contact Personnel:</b>{{outlet.contact_personnel}}</span></p>
+<div class="cards">
+    <div class="card_1 bg-info" (click)="openDetailModal(outlet)">
+        <p class="h1">4 <br><span class="header_title">Total orders</span></p>
+    </div>
+    <div class="card_2 bg-primary">
+        <p class="h1">0 <br><span class="header_title">Total invoice</span></p>
+    </div>
+    <div class="card_3 bg-success">
+        <p class="h1">0 <br><span class="header_title">Total payment</span></p>
+    </div>
+</div>
+<ion-segment color="primary" [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
+    <ion-segment-button value="invoice" checked>
+      <ion-label>Order Invoice Qty</ion-label>
+      <ion-icon name="cash"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="top">
+      <ion-label>Top 10</ion-label>
+      <ion-icon name="log-out"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="details">
+        <ion-label>Order details</ion-label>
+        <ion-icon name="home"></ion-icon>
+      </ion-segment-button>
+  </ion-segment>
+<div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'invoice'">
+        <div class="box box1">
+            <apx-chart [chart]="options.chart" [series] = "options.series"></apx-chart>
+        </div>
+        
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'top'">
+      Top 10
+    </ion-list>
+    <ion-list *ngSwitchCase="'details'">
+        Order Details
+      </ion-list>
+  </div>
+</ion-content>

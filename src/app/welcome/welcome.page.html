@@ -1,0 +1,35 @@
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/dashboard" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-row>
+          <ion-col size="5">
+            <img src="assets/site-logo.png" alt="">
+          </ion-col>
+        </ion-row>        
+        <ion-title>Outlets</ion-title>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/add-outlet">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="search_area">
+        <input type="search" name="searching" id="search" placeholder="Search for an outlet" class="form-control">
+      </div>
+      <ion-list>
+        <ion-item *ngFor="let outlet of outlets$|async" (click)="openDetailModal(outlet)">
+          <ion-fab-button color="light">
+            <ion-icon name="home-outline"></ion-icon>
+          </ion-fab-button>
+          <p>
+            {{outlet.outlet_name}}
+          </p>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+

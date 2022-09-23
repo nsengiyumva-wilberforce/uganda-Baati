@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Outlet</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/outlets" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label position="floating">Outlet Name</ion-label>
+      <ion-input formControlName="outlet_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input formControlName="phone_number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contact Personnel</ion-label>
+      <ion-input formControlName="contact_personnel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Distributor Name</ion-label>
+      <ion-input formControlName="distributor_name"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="submitOutlet()" [disabled]="form.invalid">
+      Submit
+    </ion-button>
+  </form>
+</ion-content>
